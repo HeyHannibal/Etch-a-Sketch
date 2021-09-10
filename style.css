@@ -1,0 +1,126 @@
+body, html{
+  height: 100%;
+  display: grid;
+  background: #f7feff;  
+
+  font-family: 'Open Sans', sans-serif;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+ 
+  margin: auto;
+  padding-bottom: 3vh;
+}
+
+#container {
+  box-shadow: 3px 3px 10px rgb(54, 54, 54);
+  max-width: 680px;
+  max-height: 680px;
+  width: 80vw;
+  height: 80vw;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr); 
+ /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) */
+  
+}
+
+
+#settings {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+ 
+
+  max-width: 580px;
+  width: 80vw;
+  
+  z-index: 1;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  font-family: 'Open Sans';
+}
+
+
+  
+
+#colorWrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px; 
+  overflow: hidden; 
+  float: left;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.644) ;
+  margin-right: 9px;
+}
+#colorPick {
+  border: 0; 
+  padding: 0 ;
+  width: 210%;
+  height: 210%; 
+  cursor: pointer; 
+  transform: translate(-25%, -25%);
+  margin-right: 9px;
+}
+
+h1{
+ 
+  margin: auto;
+  color: #535353;
+  font-size: 3rem;
+
+}
+button {
+
+	
+	
+	
+	
+	margin-right: 9px;
+  border: none;
+  padding: 10px 14px 10px 14px;
+  background-color: #eefeff;
+  border-radius: 6px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.562);
+}
+button:hover{
+  background-color: #23b7ec6e;
+  
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.733);
+}
+#demo {
+  font-weight:500;
+  font-size: 2rem;
+  background-color: #eefeff;
+  padding: 2px 10px 2px 10px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.562);
+}
+#myRange {
+-webkit-appearance: none;
+  max-width: 130%;
+  height: 10px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 20px;
+}
+#myRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #27a8c5;
+  border-radius: 20px;
+  cursor: pointer;
+}
