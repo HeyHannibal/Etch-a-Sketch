@@ -18,6 +18,20 @@ random.addEventListener('click', function(e) {
 return colorValue = 4;
 })
 
+const grayScale = document.querySelector('#grayScale')
+grayScale.addEventListener('click', function(e) { 
+    if (greyModeOn == false) {
+      greyModeOn = true;
+      grayScale.style.background = "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,212,255,0.4312354312354313) 48%, rgba(0,212,255,0.8904428904428905) 58%, rgba(0,212,255,1) 100%)"
+    }
+    else {
+      greyModeOn = false
+      grayScale.style.background = "#eefeff"
+    }
+    
+})
+let greyModeOn = false;
+
 
 colorPick.onchange = function() {
     colorValue = 3
@@ -45,7 +59,7 @@ function ChooseColor() {
 }
 
 let userColor; 
- 
+
 function add(n) {
     for (let i = 1; i <= n; i++) {
         const div = document.createElement('div');
@@ -54,9 +68,19 @@ function add(n) {
             container.style.aspectRatio = "1/1";
             container.style.background = "e8e8ec"
             div.addEventListener('mouseover', function (e) {
-              
-              div.style.background = ChooseColor();
-              
+              if(greyModeOn === true) {
+              if(e.target.id != "gg") {
+                e.target.id = "gg";
+                e.target.style.opacity = "0.1";
+              }  
+              if (e.target.id === "gg") {
+                let temp = window.getComputedStyle(e.target).getPropertyValue("opacity");
+                 e.target.style.opacity = Number(temp) + .1; 
+              }}
+              if(greyModeOn === false) {
+                e.target.style.opacity = "1";
+              } 
+              e.target.style.background = ChooseColor();
             });   
            
         div.style.aspectRatio = "1/1";
@@ -84,19 +108,22 @@ slider.onmouseup = function getRes() {
 }
 
  
-let arr = document.querySelectorAll('.pixels')
-const grayScale = document.querySelector('#grayScale')
-grayScale.addEventListener('click', function(e) {
-  colorValue = 1; 
-    document.querySelectorAll('.pixels').forEach(e => {
-      e.addEventListener('mouseenter', function (e) {
-          if (e.target.id != "grey'd") {
-                e.target.style.opacity = "0.1"
-                e.target.id = "grey'd"} 
-          let temp = window.getComputedStyle(e.target).getPropertyValue("opacity");
-          e.target.style.opacity = Number(temp) + .1; 
-      })})})
+// let arr = document.querySelectorAll('.pixels')
+// const grayScale = document.querySelector('#grayScale')
+// grayScale.addEventListener('click', function(e) { 
+//     document.querySelectorAll('.pixels').forEach(e => {
+//       e.addEventListener('mouseenter', function (e) {
+//         e.target.id = "grayd";
+//       })
+//     })
+//   })
 
+// function iWishIWasDead() {
+// let shades = document.querySelector('#grayd')
+// shades.addEventListener("mouseenter", function (e) {
+//   let temp = window.getComputedStyle(e.target).getPropertyValue("opacity");
+//   e.target.style.opacity = Number(temp) + .1; 
+// })}
 
 function randomColor() {
   return Math.floor(Math.random() * (255 - 1 + 1) + 1) 

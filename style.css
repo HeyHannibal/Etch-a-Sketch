@@ -78,6 +78,11 @@ h1{
   font-size: 3rem;
 
 }
+
+#grayScale:hover {
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,212,255,1) 100%);
+}
+
 button {
 
 	
@@ -96,6 +101,7 @@ button:hover{
   
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.733);
 }
+
 #demo {
   font-weight:500;
   font-size: 2rem;
