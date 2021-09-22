@@ -54,7 +54,9 @@ function add(n) {
             container.style.aspectRatio = "1/1";
             container.style.background = "e8e8ec"
             div.addEventListener('mouseover', function (e) {
+              
               div.style.background = ChooseColor();
+              
             });   
            
         div.style.aspectRatio = "1/1";
@@ -81,15 +83,16 @@ slider.onmouseup = function getRes() {
     add(resolution*resolution);
 }
 
-
-
+ 
+let arr = document.querySelectorAll('.pixels')
 const grayScale = document.querySelector('#grayScale')
 grayScale.addEventListener('click', function(e) {
-
-  document.querySelectorAll('.pixels').forEach(e => e.style.opacity = "0")
   colorValue = 1; 
     document.querySelectorAll('.pixels').forEach(e => {
       e.addEventListener('mouseenter', function (e) {
+          if (e.target.id != "grey'd") {
+                e.target.style.opacity = "0.1"
+                e.target.id = "grey'd"} 
           let temp = window.getComputedStyle(e.target).getPropertyValue("opacity");
           e.target.style.opacity = Number(temp) + .1; 
       })})})
