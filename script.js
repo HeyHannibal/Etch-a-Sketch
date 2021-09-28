@@ -32,15 +32,11 @@ grayScale.addEventListener('click', function(e) {
 })
 let greyModeOn = false;
 
-
 colorPick.onchange = function() {
     colorValue = 3
     return userColor = this.value; 
 
   }
-
-
-
 
 let colorValue = 0;
 function ChooseColor() {
@@ -87,13 +83,7 @@ function add(n) {
         div.setAttribute('id', i);
         div.classList.add('pixels')
         container.appendChild(div);}
-        
-
 } 
-
-
-
-
 
 let resolution = 16;
 add(resolution*resolution)
@@ -106,24 +96,6 @@ slider.onmouseup = function getRes() {
     resolution = this.value;
     add(resolution*resolution);
 }
-
- 
-// let arr = document.querySelectorAll('.pixels')
-// const grayScale = document.querySelector('#grayScale')
-// grayScale.addEventListener('click', function(e) { 
-//     document.querySelectorAll('.pixels').forEach(e => {
-//       e.addEventListener('mouseenter', function (e) {
-//         e.target.id = "grayd";
-//       })
-//     })
-//   })
-
-// function iWishIWasDead() {
-// let shades = document.querySelector('#grayd')
-// shades.addEventListener("mouseenter", function (e) {
-//   let temp = window.getComputedStyle(e.target).getPropertyValue("opacity");
-//   e.target.style.opacity = Number(temp) + .1; 
-// })}
 
 function randomColor() {
   return Math.floor(Math.random() * (255 - 1 + 1) + 1) 
